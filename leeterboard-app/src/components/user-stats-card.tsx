@@ -8,6 +8,7 @@ interface UserStats {
   easySolved: number
   mediumSolved: number
   hardSolved: number
+  ranking: number
 }
 
 export default function UserStatsCard({
@@ -16,16 +17,20 @@ export default function UserStatsCard({
   totalSolved = 350,
   easySolved = 200,
   mediumSolved = 100,
-  hardSolved = 50
+  hardSolved = 50,
+  ranking = 1
 }: Partial<UserStats> = {}) {
   return (
     <Card className="w-full max-w-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
       <CardContent className="p-6">
         <div className="flex flex-wrap items-center gap-4">
-          <Avatar className="w-16 h-16 border-2 border-primary">
-            <AvatarImage src={imageUrl} alt={username} />
-            <AvatarFallback>{username?.slice(0, 2).toUpperCase()}</AvatarFallback>
-          </Avatar>
+          <div className="flex items-center">
+            <span className="text-2xl font-bold text-gray-300 mr-6">{ranking}</span>
+            <Avatar className="w-16 h-16 border-2 border-primary">
+              <AvatarImage src={imageUrl} alt={username} />
+              <AvatarFallback>{username?.slice(0, 2).toUpperCase()}</AvatarFallback>
+            </Avatar>
+          </div>
           <div className="flex-grow">
             <h2 className="text-2xl font-bold text-primary">{username}</h2>
             <p className="text-muted-foreground">
