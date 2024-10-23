@@ -1,12 +1,11 @@
 package com.example.leeterboard.model;
-
+import java.util.Set;
+import java.util.HashSet;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import java.util.Set;
-import java.util.HashSet;
 
 @Entity
 public class User {
@@ -80,5 +79,13 @@ public class User {
 
     public void setHardProblemsSolved(int hardProblemsSolved) {
         this.hardProblemsSolved = hardProblemsSolved;
+    }
+
+    public Set<Room> getRooms() {
+        return rooms;
+    }
+
+    public void setRooms(Set<Room> rooms) {
+        this.rooms = rooms;
     }
 }

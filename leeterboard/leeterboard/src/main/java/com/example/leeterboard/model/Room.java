@@ -9,8 +9,10 @@ import java.util.HashSet;
 import java.util.Set;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "room")
 public class Room {
 
     @Id

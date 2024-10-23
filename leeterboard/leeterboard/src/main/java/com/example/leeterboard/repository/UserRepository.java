@@ -1,9 +1,9 @@
 package com.example.leeterboard.repository;
 
 import org.springframework.data.jpa.repository.*;
-import java.util.List;
 import com.example.leeterboard.model.*;
+import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Long> {
-    List<User> findByRoom(Room room);
+    Optional<User> findByUsername(String username);
 }
